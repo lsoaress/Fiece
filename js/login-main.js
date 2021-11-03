@@ -15,6 +15,6 @@ function validar(){
         alert('Senha muito grande')
     }
     else{
-        formulario_login.action = url.replace('index.html', 'index.html');
+        alert('Bem Vindo ao "Nome Do Fórum"')
     }
 }
