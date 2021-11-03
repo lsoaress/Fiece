@@ -15,6 +15,6 @@ function validar(){
         alert('Senha muito grande')
     }
     else{
-        formulario_login.action = url.replace('login.html', 'dashboard.html');
+        formulario_login.action = url.replace('index.html', 'index.html');
     }
 }
