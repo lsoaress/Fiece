@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
 
-    <script src="js/login-main.js"></script>
+  <!--   <script src="js/login-main.js"></script> -->
 
 </head>
 <body>
@@ -19,15 +19,79 @@
         <source src="img/fundo_login.mp4" type="video/mp4">
     </video>
     <section id="sec-login">
-        <form method="post">
+        <form method="post" onsubmit="return entrar()" id="form_login">
             <div id="login">
-                <h1>Login</h1>
-                <input id="inp_usuario" placeholder="Email">
-                <input type="password" id="inp_senha" placeholder="Senha">
-                <button type="submit" onclick="validar()">Entrar</button>
+                <h1>Login - <i>Fiece</i></h1>
+                <input name="email" placeholder="Email" type="email">
+                <input name="senha" type="password" placeholder="Senha">
+                <button type="submit">Entrar</button>
                 <h5>Ainda não possui login? <a href="cadastro.html">Cadastre-se agora!!</a></h5>
             </div>
         </form>
     </section>
 </body>
 </html>
+
+<script>
+
+    function entrar() {
+
+        var formulario = new URLSearchParams(new FormData(document.getElementById("form_login")));
+
+        var email = formulario.get("email");
+        var senha = formulario.get("senha");
+
+        console.log("FORM LOGIN: ", email);
+        console.log("FORM SENHA: ", senha);
+
+        if (email == "" || senha == "") {
+            window.alert("Preencha todos os campos para prosseguir!");
+            return false;
+        }
+
+        if (email.indexOf(".com") == -1) {
+            window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
+            return false;
+        }
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            body: formulario
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                    setTimeout(function () {
+                        window.location = "./dashboard/dashboard.html";
+                    }); 
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+                
+                resposta.text().then(texto => {
+                    console.error(texto);
+                });
+                alert('Email e/ou senha inválido')
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+</script>

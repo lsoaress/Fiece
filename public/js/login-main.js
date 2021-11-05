@@ -1,20 +1,69 @@
-function validar(){
-    var usuario = inp_usuario.value;
-    var senha = inp_senha.value;
+function entrar() {
 
-    if(usuario.indexOf("@")== -1){
-        alert('Usuario invalido, falta @')        
+    var formulario = new URLSearchParams(new FormData(document.getElementById("form_login")));
+
+    console.log("FORM LOGIN: ", formulario.get("login"));
+    console.log("FORM SENHA: ", formulario.get("senha"));
+
+    fetch("/usuarios/autenticar", {
+        method: "POST",
+        body: formulario
+    }).then(function (resposta) {
+        console.log("ESTOU NO THEN DO entrar()!")
+
+        if (resposta.ok) {
+            console.log(resposta);
+
+            resposta.json().then(json => {
+                console.log(json);
+                console.log(JSON.stringify(json));
+
+                sessionStorage.LOGIN_USUARIO = json.login;
+                sessionStorage.NOME_USUARIO = json.nome;
+                sessionStorage.ID_USUARIO = json.id;
+
+
+                setTimeout(function () {
+                    window.location = "./dashboard/dashboard.html";
+                });
+
+            });
+
+        } else {
+
+            console.log("Erro de login!");
+
+            resposta.text().then(texto => {
+                console.error(texto);
+                finalizarAguardar(texto);
+            });
+        }
+
+    }).catch(function (erro) {
+        console.log(erro);
+    })
+
+    return false;
+}
+
+function validarSessao() {
+
+    var login = sessionStorage.LOGIN_USUARIO;
+    var nome = sessionStorage.NOME_USUARIO;
+
+    var h1Titulo = document.getElementById("h1_titulo");
+
+    if (login != null && nome != null) {
+        h1Titulo.innerHTML = `${login}`;
+
+        finalizarAguardar();
+    } else {
+        window.location = "index.html";
     }
-    else if(usuario.indexOf(".com")== -1){
-        alert('Usuário inválido, falta .com')
-    }
-    else if(senha.lenght < 5){
-        alert('Senha muito curta')
-    }
-    else if(senha.lenght > 15){
-        alert('Senha muito grande')
-    }
-    else{
-        alert('Bem Vindo ao "Nome Do Fórum"')
-    }
+}
+
+function sair() {
+    sessionStorage.clear();
+    finalizarAguardar();
+    window.location = "index.html";
 }
