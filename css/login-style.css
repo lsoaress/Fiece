@@ -16,9 +16,9 @@ body {
     display: flex;
     width: 26vw;
     height: 70vh;
-    background-color: #1d1d1d;
+    background-color: #1d1d1db4;
     border-radius: 15px;
-    box-shadow: 10px 10px rgba(46, 49, 49, 1);
+    box-shadow: 10px 10px #35c4f07c;
     flex-direction: column;  
 }
 
@@ -36,7 +36,7 @@ h1 {
 }
 input {
     border-style: none;
-    background-color: #1d1d1d;
+    background-color: #1d1d1d00;
     color: #f2f2f2;
     width: 70%;
     height: 20px;
@@ -65,4 +65,17 @@ button:hover{
     background-color: #f05a5a;
     transition: 0.5s;
 }
-
+h5{
+    text-align: center;
+}
+a{
+    text-decoration: none;
+    color: #35c4f0;
+}
+a:hover{
+    color: #f05a5a;
+    transition: 0.5s;
+}
+input::placeholder{
+    color: #f2f2f2;
+}
