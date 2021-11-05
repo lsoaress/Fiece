@@ -58,7 +58,7 @@ h1 {
 input::placeholder{
     color: #f2f2f2;
 }
-.style-input{
+input{
     border-style: none;
     background-color: #1d1d1d00;
     color: #fff6f6;
@@ -72,22 +72,4 @@ input::placeholder{
     font-weight: bold;
     font-size: 15px;
     outline: 0;
-}
-select{
-    appearance: none;
-}
-option{
-    background-color: #1d1d1d;
-    color: #fff6f6;
-}
-option::-webkit-scrollbar {
-    width: 12px;               /* largura do scroll */
-}  
-select::-webkit-scrollbar-track {
-    background: #ffc200;        /* cor do scroll */
-} 
-select::-webkit-scrollbar-thumb {
-    background-color: #252525;    /* cor do fundo do scroll */
-    border-radius: 20px;
-    border: 2px solid #ffc200;  /* cria uma borda ao redor do scroll */
 }
