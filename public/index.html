@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="css/login-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+
+    <script src="js/login-main.js"></script>
+
+</head>
+<body>
+    <video autoplay muted loop id="myvideo">
+        <source src="img/fundo_login.mp4" type="video/mp4">
+    </video>
+    <section id="sec-login">
+        <form method="post">
+            <div id="login">
+                <h1>Login</h1>
+                <input id="inp_usuario" placeholder="Email">
+                <input type="password" id="inp_senha" placeholder="Senha">
+                <button type="submit" onclick="validar()">Entrar</button>
+                <h5>Ainda não possui login? <a href="cadastro.html">Cadastre-se agora!!</a></h5>
+            </div>
+        </form>
+    </section>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+
+    <link rel="stylesheet" href="css/cadastro-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+</head>
+
+<body>
+    <video autoplay muted loop id="myvideo">
+        <source src="img/fundo_cadastro.mp4" type="video/mp4">
+    </video>
+    <section id="sec-cadastro">
+        <form method="post" onsubmit="return cadastrar()" id="form_cadastro">
+            <div id="cadastro">
+                <h1>Cadastro</h1>
+                <div class="linha">
+                    <input name="nome" placeholder="Nome">
+                    <input name="senha" maxlength="15" placeholder="Senha" class="style-input">
+                    <input name="confirmacao-senha" maxlength="15" placeholder="Confirmação da Senha"
+                        class="style-input">
+                </div>
+                <div class="linha">
+                    <input name="email" placeholder="Email" class="style-input">
+                    <input onblur="mudar_estado()" name="cep" id="inp_cep" placeholder="CEP" required>
+                    <input name="estado" id="inp_estado" placeholder="Estado">
+                </div>
+                <button>Cadastrar</button>
+            </div>
+        </form>
+    </section>
+</body>
+
+</html>
+
+<script>
+    $(document).ready(function () {
+        $('#inp_cep').mask('00000-000');
+    });
+
+    function mudar_estado() {
+
+        fetch(`https://viacep.com.br/ws/${inp_cep.value}/json/`, {
+            method: "GET",
+            mode: "cors"
+        }).then(function (resposta) {
+            console.log(resposta)
+            resposta.json().then(function(data) {
+                console.log(data)
+                inp_estado.value = data.uf
+            })
+
+        }).catch(function (erro) {
+            console.log(erro)
+
+        })
+    }
+
+    function cadastrar() {
+
+        var formulario = new URLSearchParams(new FormData(document.getElementById("form_cadastro")));
+
+        var nome = formulario.get("nome");
+        var email = formulario.get("email");
+        var senha = formulario.get("senha");
+        var cep = formulario.get("cep");
+        var estado = formulario.get("estado");
+        var confirmacaoSenha = formulario.get("confirmacao-senha");
+
+        if (nome == "" || email == "" || senha == "" || confirmacaoSenha == "" || cep == "" || estado == "") {
+
+            window.alert("Preencha todos os campos para prosseguir!");
+            if (nome == "") {
+                console.log('nome está em branco')
+            }
+            if (email == "") {
+                console.log('email está em branco')
+            }
+            if (senha == "") {
+                console.log('senha está em branco')
+            }
+            if (confirmacaoSenha == "") {
+                console.log('confirmacaoSenha está em branco')
+            }
+            if (cep == "") {
+                console.log('cep está em branco')
+            }
+            if (estado == "") {
+                console.log('estado está em branco')
+            }
+            return false;
+        }
+
+        if (email.indexOf("@") == -1 || email.indexOf(".com") == -1) {
+            window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
+            return false;
+        }
+
+        if (senha != confirmacaoSenha) {
+            window.alert("As senhas inseridas devem ser iguais para prosseguir!");
+            return false;
+        }
+
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                window.alert("Cadastro realizado com sucesso!");
+                window.location = "index.html";
+            } else{
+                throw("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+
+        return false;
+    }
+
+</script>

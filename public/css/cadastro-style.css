@@ -1,0 +1,75 @@
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    color: #f2f2f2;
+    
+}
+#myvideo {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+#sec-cadastro {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#cadastro{
+    display: flex;
+    width: 60vw;
+    height: 80vh;
+    background-color: #1d1d1db4;
+    border-radius: 15px;
+    box-shadow: 10px 10px #35c4f07c;
+    flex-direction: column;  
+    justify-content: space-evenly;
+}
+.linha{
+    display: flex;
+    flex-direction: row;
+    margin: 40px;
+}
+
+button{
+    width: 35%;
+    height: 10%;
+    margin: auto;
+    border-radius: 15px;
+    color: #252525;
+    font-weight: bold;
+    font-size: 1em;
+    background-color: #35c4f0;
+}
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+}
+input::placeholder{
+    color: #f2f2f2;
+}
+input{
+    border-style: none;
+    background-color: #1d1d1d00;
+    color: #fff6f6;
+    width: 30%;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+    border-bottom: #35c4f0 2px outset;
+    font-weight: bold;
+    font-size: 15px;
+    outline: 0;
+}
