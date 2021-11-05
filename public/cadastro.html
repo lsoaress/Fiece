@@ -24,7 +24,7 @@
     <section id="sec-cadastro">
         <form method="post" onsubmit="return cadastrar()" id="form_cadastro">
             <div id="cadastro">
-                <h1>Cadastro</h1>
+                <h1>Cadastro - <i>Fiece</i></h1>
                 <div class="linha">
                     <input name="nome" placeholder="Nome">
                     <input name="senha" maxlength="15" placeholder="Senha" class="style-input">
@@ -32,9 +32,9 @@
                         class="style-input">
                 </div>
                 <div class="linha">
-                    <input name="email" placeholder="Email" class="style-input">
+                    <input name="email" placeholder="Email" class="style-input" type="email">
                     <input onblur="mudar_estado()" name="cep" id="inp_cep" placeholder="CEP" required>
-                    <input name="estado" id="inp_estado" placeholder="Estado">
+                    <input name="estado" id="inp_estado" placeholder="Estado(uf)" maxlength="2">
                 </div>
                 <button>Cadastrar</button>
             </div>

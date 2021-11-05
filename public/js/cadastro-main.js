@@ -31,14 +31,11 @@ function cadastrar() {
     var estado = formulario.get("estado");
     var confirmacaoSenha = formulario.get("confirmacao-senha");
 
-    if (nome == "" || email == "" || senha == "" || confirmacaoSenha == "" || cep == "" || estado == "") {
+    if (nome == ""  || senha == "" || confirmacaoSenha == "" || estado == "") {
 
         window.alert("Preencha todos os campos para prosseguir!");
         if (nome == "") {
             console.log('nome está em branco')
-        }
-        if (email == "") {
-            console.log('email está em branco')
         }
         if (senha == "") {
             console.log('senha está em branco')
@@ -46,20 +43,24 @@ function cadastrar() {
         if (confirmacaoSenha == "") {
             console.log('confirmacaoSenha está em branco')
         }
-        if (cep == "") {
-            console.log('cep está em branco')
-        }
         if (estado == "") {
             console.log('estado está em branco')
         }
         return false;
     }
 
-    if (email.indexOf("@") == -1 || email.indexOf(".com") == -1) {
+    if (email.indexOf(".com") == -1) {
         window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
         return false;
     }
-
+    if(senha.lenght < 3){
+        window.alert("Senha muito Curta");
+        return false;
+    }
+    if(nome.lenght < 3){
+        window.alert("Nome muito Curto");
+        return false;
+    }
     if (senha != confirmacaoSenha) {
         window.alert("As senhas inseridas devem ser iguais para prosseguir!");
         return false;
@@ -80,6 +81,7 @@ function cadastrar() {
         }
     }).catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);
+        alert('Cep Não Existente');
     });
 
     return false;
