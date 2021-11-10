@@ -1,14 +1,16 @@
+function show_menu() {
 
+    var display = container.style.display;
 
-function hide_menu(){
-
-    document.getElementsByClassName
-    if(img_menu.style.display == block){
-        $('.img_menu').css('display', 'none')
-        $('.h5_menu').css('display', 'none')
+    if (display == 'inline-block' || display == "") {
+        // This code will not work ** It will now! **
+        container.style.display = 'none';
+        menu.style.backgroundColor = '#1d1d1d00'
     }
-    else if(img_menu.display == 'none'){
-        $('.img_menu').css('display', 'block')
-        $('.h5_menu').css('display', 'block')
+    else {
+        if (display != "inline-block") {
+            container.style.display = "inline-block";
+            menu.style.backgroundColor = '#1d1d1db3'
+        }
     }
 }
