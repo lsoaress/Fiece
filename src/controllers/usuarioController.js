@@ -30,6 +30,8 @@ function entrar(req, res) {
 
     if (email == undefined) {
         res.status(400).send("Seu email está undefined!");
+    } else if (id == undefined) {
+            res.status(400).send("Sua senha está indefinida!");
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está indefinida!");
     } else {
