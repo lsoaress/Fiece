@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $('#inp_cep').mask('00000-000');
 });
-
+    
 function mudar_estado() {
 
     fetch(`https://viacep.com.br/ws/${inp_cep.value}/json/`, {
@@ -16,7 +16,6 @@ function mudar_estado() {
 
     }).catch(function (erro) {
         console.log(erro)
-
     })
 }
 
