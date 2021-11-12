@@ -1,55 +1,121 @@
-body{
-    background-color: #252525;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+*{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins" , sans-serif;
+
 }
-.h5_menu{
-    color: #f2f2f2;
-    margin-left: 15%;
+body{
+    background-color: #35c4f0;
 }
-#sec_personagens{
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-#menu{
-    width: 4vw;
-    height: auto;
+
+#sidebar{
     position: fixed;
-    background-color: #1d1d1d00;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 12px;
-    padding-bottom: 2%;
-}
-#personagens{
-    width: 100vw;
-    height: 60vh;
-    background-color: #25252566;
-    margin-left: 2%;
-}
-.img-personagens{
+    left: 0;
+    top: 0;
     height: 100%;
-    width: 9.5%;
-    float: left;
-    border: 2px inset rgb(255, 68, 68);
-}
-.img_menu{
-    width: 40%;
-    height: auto;
-    margin-top: 40px;
-    margin-left: 28%;
-}
-#tres-tracos{
-    width: 34%;
-    height: 5%;
-    margin: 5%;
+    width: 40px;
+    background: #25252500;
+    padding: 0.5%;
+    z-index: 99;
+    transition: all 0.5s ease;
+    border-radius: 0 4px 4px 0;
+  }
+  #sidebar .logo-details{
+    background: #252525;
+    position: relative;
+    padding: 5%;
+    border-radius: 10px;
+  }
+  #sidebar .nav-list{
     margin-top: 20px;
-    display: absolute !important;
-}
+    height: 100%;
+  }
+  #sidebar li{
+    position: relative;
+    margin: 110px 0;
+    list-style: none;
+  }
+  #sidebar li .tooltip{
+    position: absolute;
+    color: #f2f2f2;
+    top: -20px;
+    left: 140%;
+    z-index: 3;
+    background: #252525;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 400;
+    opacity: 0;
+    pointer-events: none; 
+    transition: 0s;
+  }
+  #sidebar li:hover .tooltip{
+    opacity: 1;
+    transition: all 0.4s ease;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  #sidebar li a{
+    display: flex;
+    height: 35px;
+    width: 25px;
+    border-radius: 7px;
+    align-items: center;
+    text-decoration: none;
+    padding: 2px;
+  }
+  
+  #sidebar li a:hover{
+    background: #f05a5a;
+    transition: all 0.5s ease;
+  }
+
+  
+  #sec_personagens{
+    position: relative;
+    min-height: 100vh;
+    top: 0;
+    left: 78px;
+    width: calc(100% - 78px);
+    transition: all 0.5s ease;
+    z-index: 2;
+  }
+  .img_menu{
+    width: 20px;
+    height: auto;
+  }
+  .tres-tracos{
+    width: 15px;
+    height: auto;
+    margin: 5px;
+    cursor: pointer;
+  }
+  
+  .div_welcome{
+    display: inline-block;
+    color: #252525;
+    font-size: 25px;
+    font-weight: 1.5em;
+    margin: 18px;
+  }  
+  #personagens{
+    width: 100vw;
+      height: 60vh;
+      background-color: #25252566;
+      margin-left: 2%;
+  }
+  .img-personagens{
+      height: 100%;
+      width: 9.5%;
+      float: left;
+      border: 2px inset rgb(255, 68, 68);
+  }
 #container{
     display: none;
 }

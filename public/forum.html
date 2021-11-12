@@ -5,15 +5,59 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/icone_pagina.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/forum-style.css">
 
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script src="js/index.js"></script>
+    <script src="js/forum.js"></script>
     <title>Início</title>
 </head>
 
-<body>
-    <div id="menu">
+<body onload="validarSessao()">
+
+    <div id="sidebar">
+        <div class="logo-details">
+            <img src="img/img-logos/3-tracos.png" class="tres-tracos" onclick="show_menu()">
+            <!--img do logo -->
+        </div>
+        <ul class="nav-list" id="container">
+            <li>
+                <a href="forum.html">
+                    <img src="img/img-logos/home.png" class="img_menu">
+                    <!--img do home -->
+                    <!-- <img class="img_menu" src="img/img-logos/home.png"> -->
+                </a>
+                <span class="tooltip">Home</span>
+                <!--div do hover -->
+            </li>
+
+            <li>
+                <a href="index.html">
+                    <img src="img/img-logos/login.png" class="img_menu">
+                    <!--img do home -->
+                    <!-- <img class="img_menu" src="img/img-logos/home.png"> -->
+                </a>
+                <span class="tooltip">Perfil</span>
+                <!--div do hover -->
+            </li>
+
+            <li>
+                <a href="index.html">
+                    <img src="img/img-logos/logout.png" class="img_menu" onclick="limparSessao()">
+                    <!--img do home -->
+                    <!-- <img class="img_menu" src="img/img-logos/home.png"> -->
+                </a>
+                <span class="tooltip">Logout</span>
+                <!--div do hover -->
+            </li>
+        </ul>
+    </div>
+    <section id="sec_personagens">
+        <div class="div_welcome">
+            <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
+        </div>
+    </section>
+    <!-- <div id="sidebar">
         <img onclick="show_menu()" id="tres-tracos" src="img/img-logos/3-tracos.png">
 
         <div id="container">
@@ -31,8 +75,8 @@
             <h5 class="h5_menu">Logout</h5>
 
         </div>
-    </div>
-    <section id="sec_personagens">
+    </div> -->
+    <!-- <section id="sec_personagens">
         <div id="personagens">
             <img class="img-personagens"
                 src="https://ovicio.com.br/wp-content/uploads/2021/06/20210601-one-piece-wano-luffy-cosplay-1252700-1024x535.jpeg">
@@ -47,7 +91,7 @@
             <img class="img-personagens" src="">
             <img class="img-personagens" src="">
         </div>
-    </section>
+    </section> -->
 </body>
 
 </html>
