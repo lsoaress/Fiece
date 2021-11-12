@@ -52,11 +52,11 @@ function cadastrar() {
         window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
         return false;
     }
-    if(senha.lenght < 3){
+    if(senha.length < 3){
         window.alert("Senha muito Curta");
         return false;
     }
-    if(nome.lenght < 3){
+    if(nome.length < 3){
         window.alert("Nome muito Curto");
         return false;
     }
