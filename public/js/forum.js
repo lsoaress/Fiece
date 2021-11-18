@@ -4,12 +4,12 @@ function show_menu() {
     
     if (display != "inline-block") {
             container.style.display = "inline-block";
-            sidebar.style.background = '#252525';
+            sidebar.style.background = '#1D1E1B';
             container.style.transition = "all 1.5s ease";
         }
     if (display == 'inline-block') {
         container.style.display = 'none';
-        sidebar.style.background = '#25252500'
+        sidebar.style.background = '#1D1E1B00'
         container.style.transition = "all 1.5s ease";
     }
 }

@@ -8,8 +8,10 @@
 
 }
 body{
-    background-color: #35c4f0;
+    background-color: #7d90a0;
 }
+
+/* Configuração da barra lateral */
 
 #sidebar{
     position: fixed;
@@ -17,51 +19,51 @@ body{
     top: 0;
     height: 100%;
     width: 40px;
-    background: #25252500;
+    background: #1D1E1B00;
     padding: 0.5%;
     z-index: 99;
     transition: all 0.5s ease;
     border-radius: 0 4px 4px 0;
   }
-  #sidebar .logo-details{
-    background: #252525;
-    position: relative;
-    padding: 5%;
-    border-radius: 10px;
-  }
-  #sidebar .nav-list{
-    margin-top: 20px;
-    height: 100%;
-  }
-  #sidebar li{
-    position: relative;
-    margin: 110px 0;
-    list-style: none;
-  }
-  #sidebar li .tooltip{
-    position: absolute;
-    color: #f2f2f2;
-    top: -20px;
-    left: 140%;
-    z-index: 3;
-    background: #252525;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-    padding: 6px 12px;
-    border-radius: 4px;
-    font-size: 15px;
-    font-weight: 400;
-    opacity: 0;
-    pointer-events: none; 
-    transition: 0s;
-  }
-  #sidebar li:hover .tooltip{
+#sidebar .logo-details{
+  background: #1D1E1B;
+  position: relative;
+  padding: 5%;
+  border-radius: 10px;
+}
+#sidebar .nav-list{
+  margin-top: 20px;
+  height: 100%;
+}
+#sidebar li{
+  position: relative;
+  margin: 110px 0;
+  list-style: none;
+}
+#sidebar li .tooltip{
+  position: absolute;
+  color: #151414;
+  top: -20px;
+  left: 140%;
+  z-index: 3;
+  background: #f2f2f2;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 400;
+  opacity: 0;
+  pointer-events: none; 
+  transition: 0s;
+}
+#sidebar li:hover .tooltip{
     opacity: 1;
     transition: all 0.4s ease;
     top: 50%;
     transform: translateY(-50%);
   }
   
-  #sidebar li a{
+#sidebar li a{
     display: flex;
     height: 35px;
     width: 25px;
@@ -71,52 +73,131 @@ body{
     padding: 2px;
   }
   
-  #sidebar li a:hover{
+#sidebar li a:hover{
     background: #f05a5a;
     transition: all 0.5s ease;
   }
 
-  
-  #sec_personagens{
+/* Conficguração do Conrainer que representa os personagens*/
+
+#sec_personagens{
     position: relative;
-    min-height: 100vh;
+    min-height: 95vh;
     top: 0;
-    left: 78px;
-    width: calc(100% - 78px);
+    left: 60px;
+    width: calc(97% - 50px);
     transition: all 0.5s ease;
+    background-color: #252525;
     z-index: 2;
+    padding: 4px;
+    margin-top: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 13px 0px #000000, 5px 5px 5px 5px rgba(242,242,242,0.58);
   }
-  .img_menu{
+.img_menu{
     width: 20px;
     height: auto;
   }
-  .tres-tracos{
+.tres-tracos{
     width: 15px;
     height: auto;
     margin: 5px;
     cursor: pointer;
   }
   
-  .div_welcome{
-    display: inline-block;
-    color: #252525;
+.div_welcome{
+    color: #f2f2f2;
     font-size: 25px;
-    font-weight: 1.5em;
-    margin: 18px;
-  }  
-  #personagens{
-    width: 100vw;
-      height: 60vh;
-      background-color: #25252566;
-      margin-left: 2%;
+    margin: 20px;
+    text-align: center;
+  } 
+
+.div_welcome img{
+    margin-left: 42%;
+    border-radius: 12px;
+    width: 200px;
+}
+#personagens{
+    width: 80vw;
+    height: 60vh;
+    margin-left: 7%;
+    display: inline-block;
+
   }
-  .img-personagens{
-      height: 100%;
-      width: 9.5%;
-      float: left;
-      border: 2px inset rgb(255, 68, 68);
+.img-personagens{
+    height: 100%;
+    width: 100%;
+    border-left: 4px solid rgb(255, 68, 68);
+    border-bottom: 4px solid rgb(255, 68, 68);
+    cursor: pointer;
   }
 #container{
     display: none;
 }
+#votacao{
+    color: #f2f2f2;
+    font-size: 20px;
+    margin: 20px 0px 10px 35px;
+    text-align: center;
+}
+.yonkou{
+  width: 20%;
+  height: 100%;
+  float: left;
+}
 
+#span-kaido, #span-barba, #span-big, #span-luffy, #span-shanks{
+  opacity: 0;
+  color: #f2f2f2;
+  background-color: #252525;
+  text-align: center;
+  border-radius: 12px;
+  transition: 0.7s;
+}
+
+#kaido:hover #span-kaido{    /* Ativação do container das recompensas  */
+  opacity: 1;
+}
+#barba:hover #span-barba{
+  opacity: 1;
+}
+#bigmom:hover #span-big{
+  opacity: 1;
+}
+#shanks:hover #span-shanks{   
+  opacity: 1;
+}
+#luffy:hover #span-luffy{
+  opacity: 1;
+}
+
+/* Configuração da seção tópicos */
+#sec_topicos{
+  position: relative;
+  min-height: 95vh;
+  top: 0;
+  left: 60px;
+  width: calc(97% - 50px);
+  transition: all 0.5s ease;
+  background-color: #252525;
+  z-index: 2;
+  padding: 4px;
+  margin-top: 4%;
+  margin-bottom: 2%;
+  border-radius: 10px;
+  box-shadow: 0px 10px 13px 0px #000000, 5px 5px 5px 5px rgba(242,242,242,0.58);
+}
+
+/* Configuração do scroll da página */
+
+body::-webkit-scrollbar {
+  width: 15px;              
+}  
+body::-webkit-scrollbar-track {
+  background: #252525;       
+} 
+body::-webkit-scrollbar-thumb {
+  background-color: #f2f2f2;    
+  border-radius: 20px;
+  border: 3px solid #252525;  
+}
