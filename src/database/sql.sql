@@ -8,5 +8,6 @@ create table usuario(
     email varchar(45),
     cep varchar(11),
     estado char(2)
+    -- pontos int default 0 
 );
 select * from usuario;
