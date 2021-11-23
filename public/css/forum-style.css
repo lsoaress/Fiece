@@ -7,9 +7,17 @@
     font-family: "Poppins" , sans-serif;
 
 }
-body{
-    background-color: #7d90a0;
-}
+#img-fundo{
+    background-image: url('../img/mapa.jpg');
+    background-size: cover;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  body{
+    position: absolute;
+  }
 
 /* Configuração da barra lateral */
 
@@ -77,32 +85,31 @@ body{
     background: #f05a5a;
     transition: all 0.5s ease;
   }
+  .img_menu{
+      width: 20px;
+      height: auto;
+    }
+  .tres-tracos{
+      width: 15px;
+      height: auto;
+      margin: 5px;
+      cursor: pointer;
+    }
 
 /* Conficguração do Conrainer que representa os personagens*/
 
 #sec_personagens{
     position: relative;
     min-height: 95vh;
-    top: 0;
-    left: 60px;
-    width: calc(97% - 50px);
+    left: 110px;
+    width: calc(110% - 50px);
     transition: all 0.5s ease;
     background-color: #252525;
     z-index: 2;
     padding: 4px;
-    margin-top: 10px;
+    margin-top: 30px;
     border-radius: 10px;
     box-shadow: 0px 10px 13px 0px #000000, 5px 5px 5px 5px rgba(242,242,242,0.58);
-  }
-.img_menu{
-    width: 20px;
-    height: auto;
-  }
-.tres-tracos{
-    width: 15px;
-    height: auto;
-    margin: 5px;
-    cursor: pointer;
   }
   
 .div_welcome{
@@ -112,15 +119,10 @@ body{
     text-align: center;
   } 
 
-.div_welcome img{
-    margin-left: 42%;
-    border-radius: 12px;
-    width: 200px;
-}
 #personagens{
     width: 80vw;
     height: 60vh;
-    margin-left: 7%;
+    margin-left: 2.5%;
     display: inline-block;
 
   }
@@ -172,12 +174,13 @@ body{
 }
 
 /* Configuração da seção tópicos */
+
 #sec_topicos{
   position: relative;
   min-height: 95vh;
   top: 0;
-  left: 60px;
-  width: calc(97% - 50px);
+  left: 110px;
+  width: calc(110% - 50px);
   transition: all 0.5s ease;
   background-color: #252525;
   z-index: 2;
@@ -187,7 +190,40 @@ body{
   border-radius: 10px;
   box-shadow: 0px 10px 13px 0px #000000, 5px 5px 5px 5px rgba(242,242,242,0.58);
 }
-
+#sec_topicos h2{
+  color: #f86565;
+  margin: 5%;
+  font-size: 2em;
+  border-bottom: 4px solid #f86565;
+  display: inline-block;
+}
+#div_teoria{
+  padding: 1%;
+  margin: 3%;
+  margin-bottom: 6%;
+  border-top: 6px inset #F2F2F2;
+  border-bottom: 6px inset #F2F2F2;
+  border-radius: 3px;
+}
+#div_geral{
+  padding: 1%;
+  margin: 3%;
+  border-top: 6px inset #F2F2F2;
+  border-bottom: 6px inset #F2F2F2;
+  border-radius: 3px;
+}
+#sec_topicos a{
+  text-decoration: none;
+  color: #f2f2f2;
+}
+#sec_topicos a:hover{
+  color: #ff4444;
+  transition: 0.5s ease-in-out
+}
+.text-teoria{
+  color: #fa5f5f;
+  font-size: 0.7em;
+}
 /* Configuração do scroll da página */
 
 body::-webkit-scrollbar {
