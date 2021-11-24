@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/topico.js"></script>
+    <link rel="shortcut icon" href="../img/icone_pagina.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style-topico.css">
+
+    <title>Tópico - Geral</title>
+</head>
+
+<body onload="validarSessao(), atualizarFeed()">
+
+    <div id="sidebar">
+        <div class="logo-details">
+            <img src="../img/img-logos/3-tracos.png" class="tres-tracos" onclick="show_menu()">
+            <!--img do logo -->
+        </div>
+        <ul class="nav-list" id="container">
+            <li>
+                <a href="../forum.html">
+                    <img src="../img/img-logos/home.png" class="img_menu">
+                    <!--img do home -->
+                </a>
+                <span class="tooltip">Home</span>
+                <!--div do hover -->
+            </li>
+
+            <li>
+                <a href="../index.html">
+                    <img src="../img/img-logos/login.png" class="img_menu">
+                    <!--img do home -->
+                </a>
+                <span class="tooltip">Perfil</span>
+                <!--div do hover -->
+            </li>
+
+            <li>
+                <a href="../index.html">
+                    <img src="../img/img-logos/logout.png" class="img_menu" onclick="limparSessao()">
+                    <!--img do home -->
+                </a>
+                <span class="tooltip">Logout</span>
+                <!--div do hover -->
+            </li>
+        </ul>
+    </div>
+    <div id="img-fundo"></div>
+    <section id="sec_topico">
+        <div class="div_form">
+            <h1>Fazer Comentário</h1>
+            <form method="post" id="form_postagem" onsubmit="return publicar()">
+                <h2>Título</h2>
+                <input maxlength="100" name="titulo" id="titulo">
+                <h2>Descrição</h2>
+                <textarea maxlength="140" name="descricao" id="descricao" rows="5"></textarea>
+
+                <br>
+                <button type="submit">Postar</button>
+            </form>
+        </div>
+        <h1>Comentários</h1>
+        <div>
+            <div id="msg_container" class="msg_container"></div>
+        </div>
+    </section>
+
+
+</body>
+
+</html>

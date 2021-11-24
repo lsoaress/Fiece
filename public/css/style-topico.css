@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins" , sans-serif;
+
+}
+#img-fundo{
+    background-image: url('../img/mapa.jpg');
+    background-size: cover;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  body{
+    position: absolute;
+  }
+
+/* Configuração do menu Lateral */
+
+#sidebar{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 40px;
+    background: #1D1E1B00;
+    padding: 0.5%;
+    z-index: 99;
+    transition: all 0.5s ease;
+    border-radius: 0 4px 4px 0;
+  }
+#sidebar .logo-details{
+  background: #1D1E1B;
+  position: relative;
+  padding: 5%;
+  border-radius: 10px;
+}
+#sidebar .nav-list{
+  margin-top: 20px;
+  height: 100%;
+}
+#sidebar li{
+  position: relative;
+  margin: 110px 0;
+  list-style: none;
+}
+#sidebar li .tooltip{
+  position: absolute;
+  color: #151414;
+  top: -20px;
+  left: 140%;
+  z-index: 3;
+  background: #f2f2f2;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 400;
+  opacity: 0;
+  pointer-events: none; 
+  transition: 0s;
+}
+#sidebar li:hover .tooltip{
+    opacity: 1;
+    transition: all 0.4s ease;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+#sidebar li a{
+    display: flex;
+    height: 35px;
+    width: 25px;
+    border-radius: 7px;
+    align-items: center;
+    text-decoration: none;
+    padding: 2px;
+  }
+  
+#sidebar li a:hover{
+    background: #f05a5a;
+    transition: all 0.5s ease;
+  }
+  .img_menu{
+      width: 20px;
+      height: auto;
+    }
+  .tres-tracos{
+      width: 15px;
+      height: auto;
+      margin: 5px;
+      cursor: pointer;
+    }
+    #container{
+        display: none;
+    }
+
+    /* Configuração seção tópicos */
+
+    #sec_topico{
+        position: relative;
+        min-height: 80vh;
+        height: auto;
+        left: 110px;
+        width: 85vw;
+        transition: all 0.5s ease;
+        background-color: #252525;
+        z-index: 2;
+        padding: 4px;
+        margin-top: 30px;
+        border-radius: 10px;
+        box-shadow: 0px 10px 13px 0px #000000, 5px 5px 5px 5px rgba(242,242,242,0.58);
+    }
+
+    /* Configuração do scroll da página */
+
+  body::-webkit-scrollbar {
+    width: 15px;              
+  }  
+  body::-webkit-scrollbar-track {
+    background: #252525;       
+  } 
+  body::-webkit-scrollbar-thumb {
+    background-color: #f2f2f2;    
+    border-radius: 20px;
+    border: 3px solid #252525;  
+  }
