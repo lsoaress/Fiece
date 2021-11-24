@@ -18,6 +18,9 @@
   body{
     position: absolute;
   }
+  html{
+    scroll-behavior: smooth;
+ }
 
 /* Configuração da barra lateral */
 
@@ -45,7 +48,7 @@
 }
 #sidebar li{
   position: relative;
-  margin: 110px 0;
+  margin: 90px 0;
   list-style: none;
 }
 #sidebar li .tooltip{
@@ -95,8 +98,11 @@
       margin: 5px;
       cursor: pointer;
     }
+    #container{
+        display: none;
+    }
 
-/* Conficguração do Conrainer que representa os personagens*/
+/* Conficguração do Container que representa os personagens*/
 
 #sec_personagens{
     position: relative;
@@ -133,9 +139,6 @@
     border-bottom: 4px solid rgb(255, 68, 68);
     cursor: pointer;
   }
-#container{
-    display: none;
-}
 #votacao{
     color: #f2f2f2;
     font-size: 20px;
