@@ -4,17 +4,17 @@ function listar() {
     console.log("ACESSEI O AVISO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
     var instrucao = `
         SELECT 
-            a.id AS idAviso,
-            a.titulo,
-            a.descricao,
-            a.fk_usuario,
-            u.id AS idUsuario,
+            c.idComentario,
+            c.titulo,
+            c.descricao,
+            c.fk_usuario,
+            u.idUsuario,
             u.nome,
             u.email,
             u.senha
-        FROM aviso a
+        FROM comentario c
             INNER JOIN usuario u
-                ON a.fk_usuario = u.id;
+                ON c.fk_usuario = u.idUsuario;
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -28,7 +28,7 @@ function pesquisarDescricao(texto) {
             a.titulo,
             a.descricao,
             a.fk_usuario,
-            u.id AS idUsuario,
+            u.idUsuario,
             u.nome,
             u.email,
             u.senha
@@ -65,7 +65,7 @@ function listarPorUsuario(idUsuario) {
 function publicar(titulo, descricao, idUsuario) {
     console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function publicar(): ", titulo, descricao, idUsuario);
     var instrucao = `
-        INSERT INTO aviso (titulo, descricao, fk_usuario) VALUES ('${titulo}', '${descricao}', ${idUsuario});
+        INSERT INTO comentario (titulo, descricao, fk_usuario) VALUES ('${titulo}', '${descricao}', ${idUsuario});
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
