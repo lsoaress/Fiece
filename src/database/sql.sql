@@ -11,3 +11,11 @@ create table usuario(
     -- pontos int default 0 
 );
 select * from usuario;
+
+create table comentario(
+	idComentario int primary key auto_increment,
+    titulo varchar(100),
+    descricao varchar(140),
+    fk_usuario int,
+    foreign key (fk_usuario) references usuario(idUsuario)
+)auto_increment = 1000;
