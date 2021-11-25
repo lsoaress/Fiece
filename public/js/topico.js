@@ -95,27 +95,21 @@ function atualizarFeed() {
                     var spanTitulo = document.createElement("span");
                     var spanNome = document.createElement("span");
                     var divDescricao = document.createElement("div");
-                    var divButtons = document.createElement("div");
 
 
                     spanNome.innerHTML = `<b>${publicacao.nome}</b> <br>`;
-                    spanTitulo.innerHTML = `Assunto: <b>${publicacao.titulo}</b> <br>`;
-                    divDescricao.innerHTML = `<b>${publicacao.descricao}</b> <br>`;
+                    spanTitulo.innerHTML = `Assunto: <b>${publicacao.titulo}</b> <br> <br>`;
+                    divDescricao.innerHTML = `${publicacao.descricao} <br>`;
 
                     divPublicacao.className = "publicacao";
-                    spanTitulo.id = "inputNumero" + publicacao.idAviso;
                     spanNome.className = "publicacao-nome";
                     spanTitulo.className = "publicacao-titulo";
                     divDescricao.className = "publicacao-descricao";
-
-                    divButtons.className = "div-buttons"
-
 
 
                     divPublicacao.appendChild(spanNome);
                     divPublicacao.appendChild(spanTitulo);
                     divPublicacao.appendChild(divDescricao);
-                    divPublicacao.appendChild(divButtons);
                     feed.appendChild(divPublicacao);
                 }
 
