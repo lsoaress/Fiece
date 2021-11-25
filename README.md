@@ -1,4 +1,4 @@
 # Projeto-individual
-Projeto individual BandTec
+Projeto individual SP Tech
 
-Projeto Individual feito na BandTec - Fórum temático de One Piece
+Projeto Individual feito na SP Tech - Fórum temático de One Piece
