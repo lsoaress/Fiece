@@ -110,10 +110,70 @@
         transition: all 0.5s ease;
         background-color: #252525;
         z-index: 2;
-        padding: 4px;
+        padding: 15px;
         margin-top: 30px;
         border-radius: 10px;
         box-shadow: 0px 10px 13px 0px #000000, 5px 5px 5px 5px rgba(242,242,242,0.58);
+    }
+
+    h1{
+      color: #f86565;
+      text-align: center;
+    }
+    h2{
+      color:#35c4f0 ;
+      margin-top: 4%;
+    }
+    button{
+      width: 35%;
+      height: 10%;
+      margin: auto;
+      border-radius: 15px;
+      color: #252525;
+      font-weight: bold;
+      font-size: 1em;
+      background-color: #35c4f0;
+  }
+  
+  button:hover{
+      background-color: #f05a5a;
+      transition: 0.5s;
+  }
+    #form_postagem{
+      margin: 3% 30%;
+    }
+    #descricao{
+      min-width: 400px;
+      background-color: #2525251c;
+      box-shadow: #f8656544 0px 50px 100px -20px, #f8656544 0px 30px 60px -30px, #f8656544 0px -2px 0px 0px inset;
+      border:#f2f2f2 solid 1px;
+      border-radius: 10px;
+      color: #f2f2f2;
+      padding: 1%;
+    }
+    #titulo{
+      background-color: #2525251c;
+      border:#f2f2f2 solid 1px;
+      border-radius: 10px;
+      color: #f2f2f2;
+      padding: 1%;
+    }
+
+    .msg_container{
+      color: #f2f2f2;
+      width: 80%;
+      
+    } 
+    .publicacao{
+      margin-bottom: 4%;
+      background-color: #f2f2f24f;
+      border-radius: 10px;
+      padding: 1%;
+      margin-left: 24%;
+      box-shadow: #35c4f044 0px 50px 100px -20px, #35c4f044 0px 30px 60px -30px, #35c4f044 0px -2px 6px 0px inset;
+    }
+    .publicacao-descricao{
+      word-wrap: break-word;  
     }
 
     /* Configuração do scroll da página */

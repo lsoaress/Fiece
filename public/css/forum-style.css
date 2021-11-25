@@ -135,8 +135,8 @@
 .img-personagens{
     height: 100%;
     width: 100%;
-    border-left: 4px solid rgb(255, 68, 68);
-    border-bottom: 4px solid rgb(255, 68, 68);
+    border-left: 4px solid #ff4444;
+    border-bottom: 4px solid #ff4444;
     cursor: pointer;
   }
 #votacao{
