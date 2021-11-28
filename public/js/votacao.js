@@ -4,61 +4,61 @@ var personagem_votado;
 confirmar_voto();
 
 function votarLuffy() {
-    personagem_votado = "luffy";
+    personagem_votado = "Luffy";
     sessionStorage.PERSONAGEM = 'Luffy'
     return votoLuffy();
 }
 
 function votarZoro() {
-    personagem_votado = "zoro";
+    personagem_votado = "Zoro";
     sessionStorage.PERSONAGEM = 'Zoro'
     return votoZoro();
 }
 
 function votarNami() {
-    personagem_votado = "nami";
+    personagem_votado = "Nami";
     sessionStorage.PERSONAGEM = 'Nami'
     return votoNami();
 }
 
 function votarUsopp() {
-    personagem_votado = "usopp";
+    personagem_votado = "Usopp";
     sessionStorage.PERSONAGEM = 'Usopp'
     return votoUsopp();
 }
 
 function votarSanji() {
-    personagem_votado = "sanji";
+    personagem_votado = "Sanji";
     sessionStorage.PERSONAGEM = 'Sanji'
     return votoSanji();
 }
 
 function votarChopper() {
-    personagem_votado = "chopper";
+    personagem_votado = "Chopper";
     sessionStorage.PERSONAGEM = 'Chopper'
     return votoChopper();
 }
 
 function votarRobin() {
-    personagem_votado = "robin";
+    personagem_votado = "Robin";
     sessionStorage.PERSONAGEM = 'Robin'
     return votoRobin();
 }
 
 function votarFranky() {
-    personagem_votado = "franky";
+    personagem_votado = "Franky";
     sessionStorage.PERSONAGEM = 'Franky'
     return votoFranky();
 }
 
 function votarBrook() {
-    personagem_votado = "brook";
+    personagem_votado = "Brook";
     sessionStorage.PERSONAGEM = 'Brook'
     return votoBrook();
 }
 
 function votarJinbe() {
-    personagem_votado = "jinbe";
+    personagem_votado = "Jinbe";
     sessionStorage.PERSONAGEM = 'Jinbe'
     return votoJinbe();
 }
