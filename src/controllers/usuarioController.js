@@ -296,6 +296,26 @@ function confirmar_voto(req, res) {
 }
 
 
+/* configuração do perfil */
+
+function ver_perfil(req, res) {
+    usuarioModel.ver_perfil()
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhum resultado encontrado!")
+            }
+        }).catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar a consulta! Erro: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+}
+
+
 module.exports = {
     entrar,
     cadastrar,
@@ -311,4 +331,5 @@ module.exports = {
     ver_votos_brook,
     ver_votos_jinbe,
     confirmar_voto,
+    ver_perfil,
 }

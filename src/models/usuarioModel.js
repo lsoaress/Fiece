@@ -32,7 +32,7 @@ function cadastrar(nome, email, senha, cep, estado) {
 function ver_votos_luffy() {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function ver_votos_luffy()");
     var instrucao = `
-        SELECT COUNT(idVoto) as voto FROM voto WHERE personagem = 'luffy';
+        SELECT COUNT(idVoto) as voto FROM voto WHERE personagem = 'Luffy';
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -41,7 +41,7 @@ function ver_votos_luffy() {
 function ver_votos_zoro() {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function ver_votos_zoro()");
     var instrucao = `
-        SELECT COUNT(idVoto) as voto FROM voto WHERE personagem = 'zoro';
+        SELECT COUNT(idVoto) as voto FROM voto WHERE personagem = 'Zoro';
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -50,7 +50,7 @@ function ver_votos_zoro() {
 function ver_votos_nami() {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function ver_votos_nami()");
     var instrucao = `
-        SELECT COUNT(idVoto) as voto FROM voto WHERE personagem = 'nami';
+        SELECT COUNT(idVoto) as voto FROM voto WHERE personagem = 'Nami';
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -59,7 +59,7 @@ function ver_votos_nami() {
 function ver_votos_usopp() {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function ver_votos_usopp()");
     var instrucao = `
-        SELECT COUNT(idVoto) as voto FROM voto WHERE personagem = 'usopp';
+        SELECT COUNT(idVoto) as voto FROM voto WHERE personagem = 'Usopp';
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -68,7 +68,7 @@ function ver_votos_usopp() {
 function ver_votos_sanji() {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function ver_votos_sanji()");
     var instrucao = `
-        SELECT COUNT(idVoto) as voto FROM voto WHERE personagem = 'sanji';
+        SELECT COUNT(idVoto) as voto FROM voto WHERE personagem = 'Sanji';
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -77,7 +77,7 @@ function ver_votos_sanji() {
 function ver_votos_chopper() {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function ver_votos_chopper()");
     var instrucao = `
-        SELECT COUNT(idVoto) as voto FROM voto WHERE personagem = 'chopper';
+        SELECT COUNT(idVoto) as voto FROM voto WHERE personagem = 'Chopper';
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -86,7 +86,7 @@ function ver_votos_chopper() {
 function ver_votos_robin() {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function ver_votos_robin()");
     var instrucao = `
-        SELECT COUNT(idVoto) as voto FROM voto WHERE personagem = 'robin';
+        SELECT COUNT(idVoto) as voto FROM voto WHERE personagem = 'Robin';
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -95,7 +95,7 @@ function ver_votos_robin() {
 function ver_votos_franky() {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function ver_votos_franky()");
     var instrucao = `
-        SELECT COUNT(idVoto) as voto FROM voto WHERE personagem = 'franky';
+        SELECT COUNT(idVoto) as voto FROM voto WHERE personagem = 'Franky';
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -104,7 +104,7 @@ function ver_votos_franky() {
 function ver_votos_brook() {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function ver_votos_brook()");
     var instrucao = `
-        SELECT COUNT(idVoto) as voto FROM voto WHERE personagem = 'brook';
+        SELECT COUNT(idVoto) as voto FROM voto WHERE personagem = 'Brook';
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -113,7 +113,7 @@ function ver_votos_brook() {
 function ver_votos_jinbe() {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function ver_votos_jinbe()");
     var instrucao = `
-        SELECT COUNT(idVoto) as voto FROM voto WHERE personagem = 'jinbe';
+        SELECT COUNT(idVoto) as voto FROM voto WHERE personagem = 'Jinbe';
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -123,6 +123,18 @@ function confirmar_voto(idUsuario) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function confirmar_voto(): ", idUsuario)
     var instrucao = `
         SELECT * FROM voto where fkUsuario = '${idUsuario}';
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+/* configuração do perfil */
+
+function ver_perfil(){
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function ver_perfil()");
+    var instrucao = `
+        select u.email, u.cep, u.estado, v.personagem from usuario as u 
+	    join voto as v on idUsuario = fkUsuario;
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -143,4 +155,5 @@ module.exports = {
     ver_votos_brook,
     ver_votos_jinbe,
     confirmar_voto,
+    ver_perfil,
 };

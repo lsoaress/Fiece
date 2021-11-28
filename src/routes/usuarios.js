@@ -65,4 +65,10 @@ router.post("/confirmar_voto", function (req, res) {
    usuarioController.confirmar_voto(req, res);
 });
 
+/* rota do perfil */
+
+router.get("/ver_perfil", function (req, res) {
+    usuarioController.ver_perfil(req, res);
+ });
+
 module.exports = router;
