@@ -52,7 +52,7 @@ function cadastrar() {
         window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
         return false;
     }
-    if(senha.length < 3){
+    if(senha.length < 5){
         window.alert("Senha muito Curta");
         return false;
     }
