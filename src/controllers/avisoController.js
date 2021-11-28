@@ -93,10 +93,317 @@ function publicar(req, res) {
     }
 }
 
+
+
+/* configuração dos votos */
+
+
+function votoLuffy(req, res) {
+    var personagem = req.body.personagem;
+    var idUsuario = req.body.id_usuario;
+
+    if (idUsuario == undefined) {
+        res.status(400).send("Seu id está undefined!");
+    } else if (personagem == undefined) {
+        res.status(400).send("O personagem escolhido está undefined!");
+    } else {
+        avisoModel.votoLuffy(personagem, idUsuario)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao cadastrar o voto! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+
+
+function votoZoro(req, res) {
+    var personagem = req.body.personagem;
+    var idUsuario = req.body.id_usuario;
+
+    if (idUsuario == undefined) {
+        res.status(400).send("Seu id está undefined!");
+    } else if (personagem == undefined) {
+        res.status(400).send("O personagem escolhido está undefined!");
+    } else {
+        avisoModel.votoZoro(personagem, idUsuario)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao cadastrar o voto! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+
+
+function votoNami(req, res) {
+    var personagem = req.body.personagem;
+    var idUsuario = req.body.id_usuario;
+
+    if (idUsuario == undefined) {
+        res.status(400).send("Seu id está undefined!");
+    } else if (personagem == undefined) {
+        res.status(400).send("O personagem escolhido está undefined!");
+    } else {
+        avisoModel.votoNami(personagem, idUsuario)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao cadastrar o voto! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+
+
+function votoUsopp(req, res) {
+    var personagem = req.body.personagem;
+    var idUsuario = req.body.id_usuario;
+
+    if (idUsuario == undefined) {
+        res.status(400).send("Seu id está undefined!");
+    } else if (personagem == undefined) {
+        res.status(400).send("O personagem escolhido está undefined!");
+    } else {
+        avisoModel.votoUsopp(personagem, idUsuario)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao cadastrar o voto! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+
+
+function votoSanji(req, res) {
+    var personagem = req.body.personagem;
+    var idUsuario = req.body.id_usuario;
+
+    if (idUsuario == undefined) {
+        res.status(400).send("Seu id está undefined!");
+    } else if (personagem == undefined) {
+        res.status(400).send("O personagem escolhido está undefined!");
+    } else {
+        avisoModel.votoSanji(personagem, idUsuario)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao cadastrar o voto! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+
+
+function votoChopper(req, res) {
+    var personagem = req.body.personagem;
+    var idUsuario = req.body.id_usuario;
+
+    if (idUsuario == undefined) {
+        res.status(400).send("Seu id está undefined!");
+    } else if (personagem == undefined) {
+        res.status(400).send("O personagem escolhido está undefined!");
+    } else {
+        avisoModel.votoChopper(personagem, idUsuario)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao cadastrar o voto! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+
+
+function votoRobin(req, res) {
+    var personagem = req.body.personagem;
+    var idUsuario = req.body.id_usuario;
+
+    if (idUsuario == undefined) {
+        res.status(400).send("Seu id está undefined!");
+    } else if (personagem == undefined) {
+        res.status(400).send("O personagem escolhido está undefined!");
+    } else {
+        avisoModel.votoRobin(personagem, idUsuario)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao cadastrar o voto! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+
+
+function votoFranky(req, res) {
+    var personagem = req.body.personagem;
+    var idUsuario = req.body.id_usuario;
+
+    if (idUsuario == undefined) {
+        res.status(400).send("Seu id está undefined!");
+    } else if (personagem == undefined) {
+        res.status(400).send("O personagem escolhido está undefined!");
+    } else {
+        avisoModel.votoFranky(personagem, idUsuario)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao cadastrar o voto! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+
+
+function votoBrook(req, res) {
+    var personagem = req.body.personagem;
+    var idUsuario = req.body.id_usuario;
+
+    if (idUsuario == undefined) {
+        res.status(400).send("Seu id está undefined!");
+    } else if (personagem == undefined) {
+        res.status(400).send("O personagem escolhido está undefined!");
+    } else {
+        avisoModel.votoBrook(personagem, idUsuario)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao cadastrar o voto! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+
+
+function votoJinbe(req, res) {
+    var personagem = req.body.personagem;
+    var idUsuario = req.body.id_usuario;
+
+    if (idUsuario == undefined) {
+        res.status(400).send("Seu id está undefined!");
+    } else if (personagem == undefined) {
+        res.status(400).send("O personagem escolhido está undefined!");
+    } else {
+        avisoModel.votoJinbe(personagem, idUsuario)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao cadastrar o voto! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+
+
+
+
 module.exports = {
     testar,
     listar,
     listarPorUsuario,
     pesquisarDescricao,
-    publicar
+    publicar,
+    votoLuffy,
+    votoZoro,
+    votoNami,
+    votoUsopp,
+    votoSanji,
+    votoChopper,
+    votoRobin,
+    votoFranky,
+    votoBrook,
+    votoJinbe
 }

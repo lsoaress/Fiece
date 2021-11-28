@@ -18,19 +18,19 @@ var sqlServerConfig = {
 }
 
 // CONEXÃO DO MYSQL WORKBENCH (LOCAL)
- /*  var mySqlConfig = {
+ /*   var mySqlConfig = {
     host: "localhost",
     user: "urubu100",
     database: "forum",
     password: "urubu100",
-};   */
+};    */
 
-  var mySqlConfig = {
+  var mySqlConfig = {       
       host: "localhost",
       user: "root",
       database: "forum",
-      password: "",
-  }; 
+      password: "",   
+    }; 
 
 function executar(instrucao) {
     // VERIFICA A VARIÁVEL DE AMBIENTE SETADA EM app.js

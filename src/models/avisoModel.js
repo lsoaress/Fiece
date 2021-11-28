@@ -4,17 +4,17 @@ function listar() {
     console.log("ACESSEI O AVISO  MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function listar()");
     var instrucao = `
         SELECT 
-            c.idComentario,
-            c.titulo,
-            c.descricao,
-            c.fk_usuario,
+            p.idPublicacao,
+            p.titulo,
+            p.descricao,
+            p.fk_usuario,
             u.idUsuario,
             u.nome,
             u.email,
             u.senha
-        FROM comentario c
+            FROM publicacao p
             INNER JOIN usuario u
-                ON c.fk_usuario = u.idUsuario;
+                ON p.fk_usuario = u.idUsuario;
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -65,25 +65,111 @@ function listarPorUsuario(idUsuario) {
 function publicar(titulo, descricao, idUsuario) {
     console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function publicar(): ", titulo, descricao, idUsuario);
     var instrucao = `
-        INSERT INTO comentario (titulo, descricao, fk_usuario) VALUES ('${titulo.toLowerCase()}', '${descricao}', ${idUsuario});
+        INSERT INTO publicacao (titulo, descricao, fk_usuario) VALUES ('${titulo.toLowerCase()}', '${descricao}', ${idUsuario});
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
 
-function editar(novoTitulo, novaDescricao, idAviso) {
-    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function publicar(): ", titulo, descricao, idUsuario);
+
+/* configuração dos votos */
+
+
+function votoLuffy(personagem, idUsuario) {
+
+    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function votoLuffy():", personagem, idUsuario);
     var instrucao = `
-        UPDATE aviso SET titulo = ${novoTitulo} , descricao = ${novaDescricao} WHERE id = ${idAviso};
+        insert into voto(personagem, fkUsuario) values ('${personagem}', '${idUsuario}') ;
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
 
-function deletar(idAviso) {
-    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", nome, email, senha);
+function votoZoro(personagem, idUsuario) {
+
+    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function votoZoro():", personagem, idUsuario);
     var instrucao = `
-        DELETE FROM aviso WHERE id = ${idAviso};
+        insert into voto(personagem, fkUsuario) values ('${personagem}', '${idUsuario}') ;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function votoNami(personagem, idUsuario) {
+
+    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function votoNami():", personagem, idUsuario);
+    var instrucao = `
+        insert into voto(personagem, fkUsuario) values ('${personagem}', '${idUsuario}') ;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function votoUsopp(personagem, idUsuario) {
+
+    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function votoUsopp():", personagem, idUsuario);
+    var instrucao = `
+        insert into voto(personagem, fkUsuario) values ('${personagem}', '${idUsuario}') ;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function votoSanji(personagem, idUsuario) {
+
+    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function votoSanji():", personagem, idUsuario);
+    var instrucao = `
+        insert into voto(personagem, fkUsuario) values ('${personagem}', '${idUsuario}') ;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function votoChopper(personagem, idUsuario) {
+
+    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function votoChopper():", personagem, idUsuario);
+    var instrucao = `
+        insert into voto(personagem, fkUsuario) values ('${personagem}', '${idUsuario}') ;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function votoRobin(personagem, idUsuario) {
+
+    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function votoRobin():", personagem, idUsuario);
+    var instrucao = `
+        insert into voto(personagem, fkUsuario) values ('${personagem}', '${idUsuario}') ;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function votoFranky(personagem, idUsuario) {
+
+    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function votoFranky():", personagem, idUsuario);
+    var instrucao = `
+        insert into voto(personagem, fkUsuario) values ('${personagem}', '${idUsuario}') ;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function votoBrook(personagem, idUsuario) {
+
+    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function votoBrook():", personagem, idUsuario);
+    var instrucao = `
+        insert into voto(personagem, fkUsuario) values ('${personagem}', '${idUsuario}') ;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function votoJinbe(personagem, idUsuario) {
+
+    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function votoJinbe():", personagem, idUsuario);
+    var instrucao = `
+        insert into voto(personagem, fkUsuario) values ('${personagem}', '${idUsuario}') ;
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -94,6 +180,14 @@ module.exports = {
     listarPorUsuario,
     pesquisarDescricao,
     publicar,
-    editar,
-    deletar
+    votoLuffy,
+    votoZoro,
+    votoNami,
+    votoUsopp,
+    votoSanji,
+    votoChopper,
+    votoRobin,
+    votoFranky,
+    votoBrook,
+    votoJinbe
 }
