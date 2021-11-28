@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../img/icone_pagina.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/perifl-style.css">
+
+    <script src="../js/perfil.js"></script>
+
+    <title>Início</title>
+</head>
+
+<body onload="validarSessao(), ver_perfil()">
+
+    <div id="sidebar">
+        <div class="logo-details">
+            <img src="../img/img-logos/3-tracos.png" class="tres-tracos" onclick="show_menu()">
+            <!--img do logo -->
+        </div>
+        <ul class="nav-list" id="container">
+
+            <li>
+                <a href="../forum.html">
+                    <img src="../img/img-logos/home.png" class="img_menu">
+                    <!--img do home -->
+                </a>
+                <span class="tooltip">Home</span>
+                <!--div do hover -->
+            </li>
+
+            <li>
+                <a href="perfil.html">
+                    <img src="../img/img-logos/perfil.png" class="img_menu">
+                    <!--img do home -->
+                </a>
+                <span class="tooltip">Perfil</span>
+                <!--div do hover -->
+            </li>
+
+            <li>
+                <a href="../index.html">
+                    <img src="../img/img-logos/logout.png" class="img_menu" onclick="limparSessao()">
+                    <!--img do home -->
+                </a>
+                <span class="tooltip">Logout</span>
+                <!--div do hover -->
+            </li>
+        </ul>
+    </div>
+    <div id="img-fundo"></div>
+    <section id="sec_perfil">
+        <div id="div_perfil">
+            <h1 style="text-align: cente4;">Informações de: <i id="b_usuario" style="color:#f86565 ;text-decoration: underline;"></i></h1>
+            <div id="div_info">
+                <h4>Seu email: <span id="banco_email" class="resp_banco"></span ></h4>
+                <h4>Seu CEP: <span id="banco_cep" class="resp_banco"></span></h4>
+                <h4>Seu estado:<span id="banco_estado" class="resp_banco"></span></h4>
+                <h4>Seu personagem preferido: <span id="banco_personagem" class="resp_banco"></span></h4>
+            </div>
+            <button onclick="ver_perfil()">aaaaaaaaaaa</button>
+        </div>
+    </section>
