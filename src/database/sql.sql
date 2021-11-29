@@ -7,12 +7,13 @@ create table usuario(
     senha varchar(100),
     email varchar(45),
     cep varchar(11),
-    estado char(2)
+    estado char(2),
 );
 select * from usuario;
 
-create table comentario(
-	idComentario int primary key auto_increment,
+create table publicacao(
+	idPublicacao int 
+    primary key auto_increment,
     titulo varchar(100),
     descricao varchar(300),
     fk_usuario int,
@@ -27,8 +28,6 @@ create table voto(
     foreign key (fkUsuario) references usuario(idUsuario)
 );
 select * from voto;
-
-select count(titulo), titulo, nome from comentario join usuario on fk_usuario = idUsuario group by titulo;
 
 
 
