@@ -74,7 +74,20 @@ function ver_perfil() {
 }
 
 function ver_personagem_votado() {
-    fetch("/usuarios/ver_personagem_votado").then(function (resposta) {
+
+    var id_usuario = sessionStorage.ID_USUARIO;
+
+    var corpo = {
+       id_usuario: id_usuario
+   }  
+
+    fetch("/usuarios/ver_personagem_votado",{
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body:  JSON.stringify(corpo)
+    }).then(function (resposta) {
         console.log("ESTOU NO THEN DO ver_personagem_votado!")
         if (resposta.ok) {
             resposta.json().then(function (resposta) {

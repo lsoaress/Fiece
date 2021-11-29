@@ -350,7 +350,9 @@ function ver_perfil(req, res) {
 }
 
 function ver_personagem_votado(req, res) {
-    usuarioModel.ver_personagem_votado()
+    var idUsuario = req.body.id_usuario;
+
+    usuarioModel.ver_personagem_votado(idUsuario)
         .then(function (resultado) {
             if (resultado.length > 0) {
                 res.status(200).json(resultado);

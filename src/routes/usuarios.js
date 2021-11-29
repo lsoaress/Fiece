@@ -71,7 +71,7 @@ router.post("/ver_perfil", function (req, res) {
     usuarioController.ver_perfil(req, res);
  });
 
- router.get("/ver_personagem_votado", function (req, res) {
+ router.post("/ver_personagem_votado", function (req, res) {
     usuarioController.ver_personagem_votado(req, res);
  });
 

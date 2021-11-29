@@ -148,10 +148,10 @@ function ver_perfil(idUsuario){
     return database.executar(instrucao);
 }
 
-function ver_personagem_votado(){
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function ver_perfil()");
+function ver_personagem_votado(idUsuario){
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function ver_personagem_votado()", idUsuario);
     var instrucao = `
-        select v.personagem from voto as v;
+        select personagem from voto join usuario on fkUsuario  = '${idUsuario}';
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
