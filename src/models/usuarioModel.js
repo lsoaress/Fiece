@@ -130,11 +130,19 @@ function confirmar_voto(idUsuario) {
 
 /* configuração do perfil */
 
-function ver_perfil(){
+function ver_perfil(idUsuario){
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function ver_perfil()", idUsuario);
+    var instrucao = `
+        select u.idUsuario ,u.email, u.cep, u.estado from usuario as u where u.idUsuario = '${idUsuario}';
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+function ver_personagem_votado(){
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function ver_perfil()");
     var instrucao = `
-        select u.email, u.cep, u.estado, v.personagem from usuario as u 
-	    join voto as v on idUsuario = fkUsuario;
+        select v.personagem from voto as v;
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -156,4 +164,5 @@ module.exports = {
     ver_votos_jinbe,
     confirmar_voto,
     ver_perfil,
+    ver_personagem_votado,
 };
