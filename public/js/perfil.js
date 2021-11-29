@@ -125,7 +125,7 @@ function mudar_div() {
         atualizarFeed();
     }
     else if (display_perfil != "block") {
-        btn_change.innerHTML = "Meus Comentários"
+        btn_change.innerHTML = "Meus Posts"
         perfil.style.display = 'block'
         personagem.style.display = 'none'
     }
