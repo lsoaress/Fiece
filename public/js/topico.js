@@ -22,7 +22,7 @@ function validarSessao() {
     var nome = sessionStorage.NOME_USUARIO;
 
 
-    if (email == null && nome == null) {
+    if (email == null || nome == null) {
         window.location = "../index.html";
     }
 }
@@ -36,39 +36,42 @@ function limparFormulario() {
     document.getElementById("form_postagem").reset();
 }
 
-function publicar(){
-    var idUsuario = sessionStorage.ID_USUARIO;
-    var nome = sessionStorage.NOME_USUARIO;
-
-    var corpo = {
-        titulo : form_postagem.titulo.value,
-        descricao: form_postagem.descricao.value
-    }
-
-    fetch(`/avisos/publicar/${idUsuario}`,{
-        method: "post",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(corpo)
-    }).then(function(resposta){
-        console.log("resposta: ", resposta);
-
-        if (resposta.ok) {
-            window.alert("Post realizado com sucesso pelo: " + nome + "!");
-            window.location = "geral.html";
-            limparFormulario();
-        } else if (resposta.status == 404) {
-            window.alert("Deu 404!");
-        } else {
-            throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
+    function publicar(){
+        var idUsuario = sessionStorage.ID_USUARIO;
+        var nome = sessionStorage.NOME_USUARIO;
+    
+        var corpo = {
+            titulo : form_postagem.titulo.value,
+            descricao: form_postagem.descricao.value
         }
-    }).catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-    })
+    
+        fetch(`/avisos/publicar/${idUsuario}`,{
+            method: "post",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(corpo)
+        }).then(function(resposta){
+            console.log("resposta: ", resposta);
+    
+            if (resposta.ok) {
+                window.alert("Post realizado com sucesso pelo: " + nome + "!");
+                window.location.reload(true);
+                limparFormulario();
+            } else if (resposta.status == 404) {
+                window.alert("Deu 404!");
+            } else {
+                throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        })
+    
+        return false;
+    }
+    
 
-    return false;
-}
+
 
 function atualizarFeed() {
     //aguardar();

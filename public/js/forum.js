@@ -22,7 +22,7 @@ function validarSessao() {
     var nome = sessionStorage.NOME_USUARIO;
 
 
-    if (email != null && nome != null) {
+    if (email != null || nome != null) {
         b_usuario.innerHTML = nome;
 
     } else {
