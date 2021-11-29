@@ -75,4 +75,8 @@ router.post("/ver_perfil", function (req, res) {
     usuarioController.ver_personagem_votado(req, res);
  });
 
+ router.post("/validarCadastro", function (req, res) {
+    usuarioController.validarCadastro(req, res);
+});
+
 module.exports = router;

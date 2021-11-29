@@ -27,6 +27,15 @@ function cadastrar(nome, email, senha, cep, estado) {
     return database.executar(instrucao);
 }
 
+function validarCadastro(nome, email) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function validarCadastro(): ", nome, email)
+    var instrucao = `
+        SELECT * FROM usuario WHERE nome = '${nome}' OR email = '${email}';
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
 /* ver os dados dos votos */
 
 function ver_votos_luffy() {
@@ -151,6 +160,7 @@ function ver_personagem_votado(){
 module.exports = {
     entrar,
     cadastrar,
+    validarCadastro,
     listar,
     ver_votos_luffy,
     ver_votos_zoro,

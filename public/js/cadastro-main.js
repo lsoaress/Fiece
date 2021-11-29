@@ -19,7 +19,7 @@ function mudar_estado() {
     })
 }
 
-function cadastrar() {
+function validarCadastro(){
 
     var formulario = new URLSearchParams(new FormData(document.getElementById("form_cadastro")));
 
@@ -65,6 +65,39 @@ function cadastrar() {
         return false;
     }
 
+
+    fetch("/usuarios/validarCadastro", {
+        method: "POST",
+        body: formulario
+    }).then(function (resposta) {
+        console.log("ESTOU NO THEN DO validarCadastro()!")
+
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+            cadastrar();
+        } else {
+            window.alert("Nome e/ou email já foram cadastrados no sistema!");
+            /* limparFormulario(); */
+            throw ("Houve um erro ao tentar realizar o cadastro!");
+        }
+    }).catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+    });
+    return false;
+}
+function limparFormulario() {
+    document.getElementById("form_cadastro").reset();
+}
+
+function cadastrar() {
+
+    var formulario = new URLSearchParams(new FormData(document.getElementById("form_cadastro")));
+    var cep = formulario.get("cep");
+    
+    cep = cep.replace('-', '')
+
+
     fetch("/usuarios/cadastrar", {
         method: "POST",
         body: formulario
@@ -80,7 +113,7 @@ function cadastrar() {
         }
     }).catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);
-        alert('Cep Não Existente');
+        alert('Erro');
     });
 
     return false;

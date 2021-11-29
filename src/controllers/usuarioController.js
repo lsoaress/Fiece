@@ -91,6 +91,37 @@ function cadastrar(req, res) {
     }
 }
 
+function validarCadastro(req, res) {
+    var nome = req.body.nome;
+    var email = req.body.email;
+
+    if (nome == undefined) {
+        res.status(400).send("Seu nome está undefinido!");
+    } else if (email == undefined) {
+        res.status(400).send("Seu email está indefinida!");
+    } else {
+        usuarioModel.validarCadastro(nome, email)
+            .then(
+                function (resultado) {
+                    console.log(`\nResultados encontrados: ${resultado.length}`);
+                    console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
+
+                    if (resultado.length == 0) {
+                        res.status(200).json(resultado);
+                    } else {
+                        res.status(403).send("Nome e/ou email já foram cadastrados no sistema!!");
+                    }
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log("\nHouve um erro a verificação o login! Erro: ", erro.sqlMessage);
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
 /* ver os dados dos votos */
 
 function ver_votos_luffy(req, res) {
@@ -339,6 +370,7 @@ function ver_personagem_votado(req, res) {
 module.exports = {
     entrar,
     cadastrar,
+    validarCadastro,
     listar,
     ver_votos_luffy,
     ver_votos_zoro,
