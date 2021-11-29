@@ -13,7 +13,7 @@
     <title>Início</title>
 </head>
 
-<body onload="validarSessao(), ver_perfil()">
+<body onload="validarSessao(), ver_perfil(), ver_personagem_votado()">
 
     <div id="sidebar">
         <div class="logo-details">
@@ -28,6 +28,24 @@
                     <!--img do home -->
                 </a>
                 <span class="tooltip">Home</span>
+                <!--div do hover -->
+            </li>
+
+            <li>
+                <a href="../forum.html#sec_topicos">
+                    <img src="../img/img-logos/forum.png" class="img_menu">
+                    <!--img do home -->
+                </a>
+                <span class="tooltip">Fórums</span>
+                <!--div do hover -->
+            </li>
+
+            <li>
+                <a href="../forum.html#sec_voto">
+                    <img src="../img/img-logos/survey.png" class="img_menu">
+                    <!--img do home -->
+                </a>
+                <span class="tooltip">Votação</span>
                 <!--div do hover -->
             </li>
 
@@ -53,13 +71,18 @@
     <div id="img-fundo"></div>
     <section id="sec_perfil">
         <div id="div_perfil">
-            <h1 style="text-align: cente4;">Informações de: <i id="b_usuario" style="color:#f86565 ;text-decoration: underline;"></i></h1>
+            <h1 style="text-align: cente4;">Informações de: <i id="b_usuario"
+                    style="color:#f86565 ;text-decoration: underline;"></i></h1>
+            <button id="btn_change" onclick="mudar_div()">Meus Comentários</button>
             <div id="div_info">
-                <h4>Seu email: <span id="banco_email" class="resp_banco"></span ></h4>
-                <h4>Seu CEP: <span id="banco_cep" class="resp_banco"></span></h4>
-                <h4>Seu estado:<span id="banco_estado" class="resp_banco"></span></h4>
-                <h4>Seu personagem preferido: <span id="banco_personagem" class="resp_banco"></span></h4>
+                <h4>Seu email: <span id="banco_email"></span></h4>
+                <h4>Seu CEP: <span id="banco_cep"></span></h4>
+                <h4>Seu estado: <span id="banco_estado"></span></h4>
+                <h4>Seu personagem preferido: <span id="banco_personagem">Ainda Não Votou</span></h4>
             </div>
-            <button onclick="ver_perfil()">aaaaaaaaaaa</button>
+        </div>
+
+        <div id="div_personagem">
+            <div id="msg_container" class="msg_container"></div>
         </div>
     </section>
