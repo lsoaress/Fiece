@@ -685,3 +685,39 @@ function confirmar_voto() {
     })
     return false;
 }
+
+function ver_personagem_votado() {
+
+    var id_usuario = sessionStorage.ID_USUARIO;
+
+    var corpo = {
+       id_usuario: id_usuario
+   }  
+
+    fetch("/usuarios/ver_personagem_votado",{
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body:  JSON.stringify(corpo)
+    }).then(function (resposta) {
+        console.log("ESTOU NO THEN DO ver_personagem_votado!")
+        if (resposta.ok) {
+            resposta.json().then(function (resposta) {
+                console.log("Dados recebidos do Perfil: ", JSON.stringify(resposta));
+
+                dado = resposta[resposta.indexOf(':') + 1]//não sei pq mas isso funciona
+
+                console.log(dado.personagem);
+
+                sessionStorage.PERSONAGEM = dado.personagem;
+
+            });
+        } else {
+            console.log("Dados recebidos: ", JSON.stringify(resposta));
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+    })
+    return false;
+}
