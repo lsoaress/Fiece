@@ -416,7 +416,7 @@ function ver_votos_luffy() {
             resposta.json().then(function (resposta) {
                 console.log("Dados recebidos do luffy: ", JSON.stringify(resposta));
 
-                votosL = resposta[resposta.indexOf(':') + 1]//não sei pq mas isso funciona
+                votosL = resposta[resposta.indexOf(':') + 1]
                 console.log(votosL.voto);
 
                 qtd_voto_luffy.innerHTML = votosL.voto;
@@ -437,7 +437,7 @@ function ver_votos_zoro() {
             resposta.json().then(function (resposta) {
                 console.log("Dados recebidos do zoro: ", JSON.stringify(resposta));
 
-                votosZ = resposta[resposta.indexOf(':') + 1]//não sei pq mas isso funciona
+                votosZ = resposta[resposta.indexOf(':') + 1]
                 console.log(votosZ.voto);
 
                 qtd_voto_zoro.innerHTML = votosZ.voto;
@@ -458,7 +458,7 @@ function ver_votos_nami() {
             resposta.json().then(function (resposta) {
                 console.log("Dados recebidos do nami: ", JSON.stringify(resposta));
 
-                votosN = resposta[resposta.indexOf(':') + 1]//não sei pq mas isso funciona
+                votosN = resposta[resposta.indexOf(':') + 1]
                 console.log(votosN.voto);
 
                 qtd_voto_nami.innerHTML = votosN.voto;
@@ -479,7 +479,7 @@ function ver_votos_usopp() {
             resposta.json().then(function (resposta) {
                 console.log("Dados recebidos do usopp: ", JSON.stringify(resposta));
 
-                votosU = resposta[resposta.indexOf(':') + 1]//não sei pq mas isso funciona
+                votosU = resposta[resposta.indexOf(':') + 1]
                 console.log(votosU.voto);
 
                 qtd_voto_usopp.innerHTML = votosU.voto;
@@ -500,7 +500,7 @@ function ver_votos_sanji() {
             resposta.json().then(function (resposta) {
                 console.log("Dados recebidos do sanji: ", JSON.stringify(resposta));
 
-                votosS = resposta[resposta.indexOf(':') + 1]//não sei pq mas isso funciona
+                votosS = resposta[resposta.indexOf(':') + 1]
                 console.log(votosS.voto);
 
                 qtd_voto_sanji.innerHTML = votosS.voto;
@@ -521,7 +521,7 @@ function ver_votos_chopper() {
             resposta.json().then(function (resposta) {
                 console.log("Dados recebidos do chopper: ", JSON.stringify(resposta));
 
-                votosC = resposta[resposta.indexOf(':') + 1]//não sei pq mas isso funciona
+                votosC = resposta[resposta.indexOf(':') + 1]
                 console.log(votosC.voto);
 
                 qtd_voto_chopper.innerHTML = votosC.voto;
@@ -542,7 +542,7 @@ function ver_votos_robin() {
             resposta.json().then(function (resposta) {
                 console.log("Dados recebidos do robin: ", JSON.stringify(resposta));
 
-                votosR = resposta[resposta.indexOf(':') + 1]//não sei pq mas isso funciona
+                votosR = resposta[resposta.indexOf(':') + 1]
                 console.log(votosR.voto);
 
                 qtd_voto_robin.innerHTML = votosR.voto;
@@ -563,7 +563,7 @@ function ver_votos_franky() {
             resposta.json().then(function (resposta) {
                 console.log("Dados recebidos do franky: ", JSON.stringify(resposta));
 
-                votosF = resposta[resposta.indexOf(':') + 1]//não sei pq mas isso funciona
+                votosF = resposta[resposta.indexOf(':') + 1]
                 console.log(votosF.voto);
 
                 qtd_voto_franky.innerHTML = votosF.voto;
@@ -584,7 +584,7 @@ function ver_votos_brook() {
             resposta.json().then(function (resposta) {
                 console.log("Dados recebidos do brook: ", JSON.stringify(resposta));
 
-                votosB = resposta[resposta.indexOf(':') + 1]//não sei pq mas isso funciona
+                votosB = resposta[resposta.indexOf(':') + 1]
                 console.log(votosB.voto);
 
                 qtd_voto_brook.innerHTML = votosB.voto;
@@ -605,7 +605,7 @@ function ver_votos_jinbe() {
             resposta.json().then(function (resposta) {
                 console.log("Dados recebidos do jinbe: ", JSON.stringify(resposta));
 
-                votosJ = resposta[resposta.indexOf(':') + 1]//não sei pq mas isso funciona
+                votosJ = resposta[resposta.indexOf(':') + 1]
                 console.log(votosJ.voto);
 
                 qtd_voto_jinbe.innerHTML = votosJ.voto;
@@ -706,7 +706,7 @@ function ver_personagem_votado() {
             resposta.json().then(function (resposta) {
                 console.log("Dados recebidos do Perfil: ", JSON.stringify(resposta));
 
-                dado = resposta[resposta.indexOf(':') + 1]//não sei pq mas isso funciona
+                dado = resposta[resposta.indexOf(':') + 1]
 
                 console.log(dado.personagem);
 

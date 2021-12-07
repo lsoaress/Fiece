@@ -93,9 +93,6 @@ function limparFormulario() {
 function cadastrar() {
 
     var formulario = new URLSearchParams(new FormData(document.getElementById("form_cadastro")));
-    var cep = formulario.get("cep");
-    
-    cep = cep.replace('-', '')
 
 
     fetch("/usuarios/cadastrar", {
