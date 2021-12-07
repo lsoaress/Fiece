@@ -133,6 +133,14 @@
                     style="text-decoration: underline;">Cuidado!</i> Este tópico pode conter spoilers</span>
         </div>
     </section>
+    <section id="sec_conversor">
+        <div id="div_conv">
+            <h2 style="color: #F2F2F2;">Quantos episódios converter em minutos?</h2>
+            <input type="number" id="inp_conver">
+            <button id="calc_conv" onclick="showRes()">Calcular</button>
+            <h3 id="res_conv"></h3>
+        </div>
+    </section>
     <section id="sec_voto">
         <div id="votacao">
             <h1 id="h1_voto">Qual seu Chapéu de Palha Preferido?? </h1><br>
@@ -142,71 +150,85 @@
                 <div class="div_voto">
                     <img src="img/img-voto/luffy_voto.jpg" id="voto_luffy" class="img_voto">
                     <span class="text_voto">Monkey D. Luffy</span>
-                    <span class="text_voto" id="span_qtd_luffy" style="margin-left: 10%;">Votos: <span id="qtd_voto_luffy">0</span></span>
-                    <span class="text_voto" style="margin-left: 10%;" id="votar_luffy" onclick="votarLuffy()" >UP</span>
+                    <span class="text_voto" id="span_qtd_luffy" style="margin-left: 10%;">Votos: <span
+                            id="qtd_voto_luffy">0</span></span>
+                    <span class="text_voto" style="margin-left: 10%;" id="votar_luffy" onclick="votarLuffy()">UP</span>
                 </div>
 
                 <div class="div_voto">
                     <img src="img/img-voto/zoro_voto.jpg" id="voto_zoro" class="img_voto">
                     <span class="text_voto">Roronoa Zoro</span>
-                    <span class="text_voto" id="span_qtd_zoro" style="margin-left: 12%;">Votos: <span id="qtd_voto_zoro">0</span></span>
-                    <span class="text_voto" style="margin-left: 12%;" id="votar_zoro" onclick="votarZoro()" >UP</span>
+                    <span class="text_voto" id="span_qtd_zoro" style="margin-left: 12%;">Votos: <span
+                            id="qtd_voto_zoro">0</span></span>
+                    <span class="text_voto" style="margin-left: 12%;" id="votar_zoro" onclick="votarZoro()">UP</span>
                 </div>
 
                 <div class="div_voto">
                     <img src="img/img-voto/nami_voto.jpg" id="voto_nami" class="img_voto">
                     <span class="text_voto">Nami</span>
-                    <span class="text_voto" id="span_qtd_nami" style="margin-left: 19.5%;">Votos: <span id="qtd_voto_nami">0</span></span>
-                    <span class="text_voto" style="margin-left: 19.5%;" id="votar_nami" onclick="votarNami()" >UP</span>
+                    <span class="text_voto" id="span_qtd_nami" style="margin-left: 19.5%;">Votos: <span
+                            id="qtd_voto_nami">0</span></span>
+                    <span class="text_voto" style="margin-left: 19.5%;" id="votar_nami" onclick="votarNami()">UP</span>
                 </div>
 
                 <div class="div_voto">
                     <img src="img/img-voto/usopp_voto.jpg" id="voto_usopp" class="img_voto">
                     <span class="text_voto">Usopp</span>
-                    <span class="text_voto" id="span_qtd_usopp" style="margin-left: 18.5%;">Votos: <span id="qtd_voto_usopp">0</span></span>
-                    <span class="text_voto" style="margin-left: 18.5%;" id="votar_usopp" onclick="votarUsopp()" >UP</span>
-                </div> 
+                    <span class="text_voto" id="span_qtd_usopp" style="margin-left: 18.5%;">Votos: <span
+                            id="qtd_voto_usopp">0</span></span>
+                    <span class="text_voto" style="margin-left: 18.5%;" id="votar_usopp"
+                        onclick="votarUsopp()">UP</span>
+                </div>
 
                 <div class="div_voto">
                     <img src="img/img-voto/sanji_voto.jpg" id="voto_sanji" class="img_voto">
                     <span class="text_voto">Vinsmoke Sanji</span>
-                    <span class="text_voto" id="span_qtd_sanji" style="margin-left: 10%;">Votos: <span id="qtd_voto_sanji">0</span></span>
-                    <span class="text_voto" style="margin-left: 10%;" id="votar_sanji" onclick="votarSanji()" >UP</span>
+                    <span class="text_voto" id="span_qtd_sanji" style="margin-left: 10%;">Votos: <span
+                            id="qtd_voto_sanji">0</span></span>
+                    <span class="text_voto" style="margin-left: 10%;" id="votar_sanji" onclick="votarSanji()">UP</span>
                 </div>
 
                 <div class="div_voto">
                     <img src="img/img-voto/chopper_voto.jpg" id="voto_chopper" class="img_voto">
                     <span class="text_voto">Tony Tony Chopper</span>
-                    <span class="text_voto" id="span_qtd_chopper" style="margin-left: 6%;">Votos: <span id="qtd_voto_chopper">0</span></span>
-                    <span class="text_voto" style="margin-left: 6%;" id="votar_chopper" onclick="votarChopper()" >UP</span>
+                    <span class="text_voto" id="span_qtd_chopper" style="margin-left: 6%;">Votos: <span
+                            id="qtd_voto_chopper">0</span></span>
+                    <span class="text_voto" style="margin-left: 6%;" id="votar_chopper"
+                        onclick="votarChopper()">UP</span>
                 </div>
 
                 <div class="div_voto">
                     <img src="img/img-voto/robin_voto.jpg" id="voto_robin" class="img_voto">
                     <span class="text_voto">Nico Robin</span>
-                    <span class="text_voto" id="span_qtd_robin" style="margin-left: 14.5%;">Votos: <span id="qtd_voto_robin">0</span></span>
-                    <span class="text_voto" style="margin-left: 14.5%;" id="votar_robin" onclick="votarRobin()" >UP</span>
+                    <span class="text_voto" id="span_qtd_robin" style="margin-left: 14.5%;">Votos: <span
+                            id="qtd_voto_robin">0</span></span>
+                    <span class="text_voto" style="margin-left: 14.5%;" id="votar_robin"
+                        onclick="votarRobin()">UP</span>
                 </div>
 
                 <div class="div_voto">
                     <img src="img/img-voto/franky_voto.jpg" id="voto_franky" class="img_voto">
                     <span class="text_voto">Franky</span>
-                    <span class="text_voto" id="span_qtd_franky" style="margin-left: 18%;">Votos: <span id="qtd_voto_franky">0</span></span>
-                    <span class="text_voto" style="margin-left: 18%;" id="votar_franky" onclick="votarFranky()" >UP</span>
+                    <span class="text_voto" id="span_qtd_franky" style="margin-left: 18%;">Votos: <span
+                            id="qtd_voto_franky">0</span></span>
+                    <span class="text_voto" style="margin-left: 18%;" id="votar_franky"
+                        onclick="votarFranky()">UP</span>
                 </div>
 
                 <div class="div_voto">
                     <img src="img/img-voto/brook_voto.jpg" id="voto_brook" class="img_voto">
                     <span class="text_voto">Soul King Brook</span>
-                    <span class="text_voto" id="span_qtd_brook" style="margin-left: 9.5%;">Votos: <span id="qtd_voto_brook">0</span></span>
-                    <span class="text_voto" style="margin-left: 9.5%;" id="votar_brook" onclick="votarBrook()" >UP</span>
+                    <span class="text_voto" id="span_qtd_brook" style="margin-left: 9.5%;">Votos: <span
+                            id="qtd_voto_brook">0</span></span>
+                    <span class="text_voto" style="margin-left: 9.5%;" id="votar_brook" onclick="votarBrook()">UP</span>
                 </div>
 
                 <div class="div_voto">
                     <img src="img/img-voto/jinbe_voto.jpg" id="voto_jinbe" class="img_voto">
                     <span class="text_voto">Jinbe</span>
-                    <span class="text_voto" id="span_qtd_jinbe" style="margin-left: 19%;">Votos: <span id="qtd_voto_jinbe">0</span></span>
-                    <span class="text_voto" style="margin-left: 19%;" id="votar_jinbe" onclick="votarJinbe()" >UP</span>
+                    <span class="text_voto" id="span_qtd_jinbe" style="margin-left: 19%;">Votos: <span
+                            id="qtd_voto_jinbe">0</span></span>
+                    <span class="text_voto" style="margin-left: 19%;" id="votar_jinbe" onclick="votarJinbe()">UP</span>
                 </div>
             </div>
         </div>

@@ -50,6 +50,7 @@ button{
     font-weight: bold;
     font-size: 1em;
     background-color: #35c4f0;
+    cursor: pointer;
 }
 button:hover{
     color: #f2f2f2;

@@ -34,3 +34,28 @@ function limparSessao() {
     sessionStorage.clear();
     window.location = "../index.html";
 }
+
+
+function changeBack(){
+    var lista_personagem = []
+    lista_personagem[0] ="url('../img/img-vetor/buggy.jpg')"
+    lista_personagem[1] ="url('../img/img-vetor/chopp.jpg')"
+    lista_personagem[2] ="url('../img/img-vetor/oden.jpg')"
+    lista_personagem[3] ="url('../img/img-vetor/roger.jpg')"
+    var counter = Math.floor(Math.random(1) * (4 - 1 + 1))
+    console.log('Número na lista dos personagens' + counter)
+
+    sec_conversor.style.backgroundImage = lista_personagem[counter];
+    sec_conversor.style.backgroundSize = 'cover';
+}
+
+function showRes(){
+    var res = Number(inp_conver.value);
+    var total = res * 23;
+    res_conv.style.display = 'block'
+    res_conv.innerHTML = total + ' minutos'
+}
+
+setInterval(function(){
+    changeBack()
+},3000)
